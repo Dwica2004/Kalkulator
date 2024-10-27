@@ -1,0 +1,174 @@
+/* Reset umum dan pengaturan font */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Montserrat", sans-serif;
+}
+
+/* Pengaturan tampilan body */
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    position: relative;
+    overflow: hidden;
+    margin: 0;
+    padding: 20px; /* Tambahkan padding untuk memberi ruang */
+}
+
+body::before,
+body::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    width: 50%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    z-index: -1;
+}
+
+body::before {
+    left: 0;
+    background-image: url('waifu1.jpg');
+}
+
+body::after {
+    right: 0;
+    background-image: url('waifu1.jpg');
+    transform: scaleX(-1);
+}
+
+/* Pengaturan tampilan kalkulator */
+.calculator {
+    width: 100%;
+    max-width: 350px; /* Sesuaikan lebar maksimum */
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    background: #333;
+    position: relative;
+}
+
+/* Pengaturan tampilan display */
+#display {
+    width: 100%;
+    height: 60px;
+    background: #1c1c1c;
+    border-radius: 10px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 10px;
+    color: #fff;
+    font-size: 1.5em; /* Sesuaikan ukuran font */
+    margin-bottom: 10px;
+}
+
+/* Pengaturan tampilan tombol */
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+}
+
+.button {
+    width: 100%;
+    height: 50px; /* Sesuaikan tinggi tombol */
+    background-color: #444;
+    color: #fff;
+    font-size: 1.2em; /* Sesuaikan ukuran font tombol */
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.button:hover {
+    background-color: #555;
+}
+
+/* Pengaturan tampilan tombol clear */
+.clear {
+    background-color: #f00f0f;
+    grid-column: span 2;
+}
+
+.clear:hover {
+    background-color: #ff6666;
+}
+
+/* Pengaturan tampilan tombol operator */
+.operator {
+    background-color: #555;
+}
+
+.operator:hover {
+    background-color: #b3a9a9;
+}
+
+/* Pengaturan tampilan tombol plus */
+.plus {
+    background-color: #38e897;
+    height: 110px; /* Sesuaikan tinggi tombol plus */
+    grid-row: span 2; /* Membuat tombol "+" menempati dua baris */
+}
+
+.plus:hover {
+    background-color: #2ed573;
+}
+
+/* Pengaturan tampilan tombol equal */
+.equal {
+    background-color: #2ed573;
+    height: 60px;
+}
+
+.equal:hover {
+    background-color: #38e897;
+}
+
+/* Media queries untuk layar kecil */
+@media (max-width: 600px) {
+    .calculator {
+        padding: 15px;
+    }
+
+    #display {
+        height: 50px;
+        font-size: 1.2em;
+    }
+
+    .button {
+        height: 45px;
+        font-size: 1em;
+    }
+
+    .plus {
+        height: 90px;
+    }
+}
+
+/* Media queries untuk tablet */
+@media (min-width: 601px) and (max-width: 900px) {
+    .calculator {
+        width: 80%;
+        max-width: 400px;
+    }
+
+    #display {
+        height: 60px;
+        font-size: 1.8em;
+    }
+
+    .button {
+        height: 55px;
+        font-size: 1.4em;
+    }
+
+    .plus {
+        height: 120px;
+    }
+}
